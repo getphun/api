@@ -7,6 +7,14 @@
 
 class ApiController extends \Controller 
 {
+    public function internalServerErrorAction($errstr, $errfile, $errline){
+        $this->resp('Internal Server Error', 500, [
+            'message' => $errstr,
+            'file' => $errfile,
+            'line' => $errline
+        ]);
+    }
+    
     public function notFoundAction(){
         return $this->show404();
     }

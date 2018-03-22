@@ -31,6 +31,9 @@ return [
         'api' => [
             '404' => [
                 'handler' => 'Api::notFound'
+            ],
+            '500' => [
+                'handler' => 'Api::internalServerError'
             ]
         ]
     ]
